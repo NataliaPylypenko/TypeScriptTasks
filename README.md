@@ -1,1 +1,1 @@
-[Frontend Pro](https://nataliapylypenko.github.io/TypeScriptTasks/)
+[TypeScriptTasks](https://nataliapylypenko.github.io/TypeScriptTasks/)
