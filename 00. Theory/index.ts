@@ -56,3 +56,75 @@ fetchWithAuth('url', method2 as 'post');
 // 4 but...
 let method3 = '3';
 fetchWithAuth('url', method3 as 'post');
+
+// ====================
+// Type Aliases
+
+type httpMethod = 'post' | 'get';
+function fetchWithAuth1(url: string, method: httpMethod) {}
+
+// let user: {
+//     name: string,
+//     age: number,
+//     skills: string[]
+// } = {
+//     name: 'asdf',
+//     age: 33,
+//     skills: ['1', '2']
+// };
+
+// type User = {
+//     name: string,
+//     age: number,
+//     skills: string[]
+// }
+//
+// let user: User = {
+//     name: 'asdf',
+//     age: 33,
+//     skills: ['1', '2']
+// };
+
+// type User = {
+//     name: string,
+//     age: number,
+//     skills: string[]
+// }
+//
+// type Role = {
+//     id: number
+// }
+//
+// // Intersection
+// type UserWithRole = User & Role;
+//
+// let user: UserWithRole = {
+//     id: 12,
+//     name: 'asdf',
+//     age: 33,
+//     skills: ['1', '2']
+// };
+
+type User = {
+    name: string,
+    age: number,
+    skills: string[]
+}
+
+type Role = {
+    id: number
+}
+
+// Intersection
+type UserWithRole = {
+    user: User,
+    role: Role
+}
+
+// let user: UserWithRole = {
+//     id: 12,
+//     name: 'asdf',
+//     age: 33,
+//     skills: ['1', '2']
+// };
+
