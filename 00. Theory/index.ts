@@ -105,26 +105,63 @@ function fetchWithAuth1(url: string, method: httpMethod) {}
 //     skills: ['1', '2']
 // };
 
-type User = {
-    name: string,
-    age: number,
-    skills: string[]
-}
-
-type Role = {
-    id: number
-}
-
-// Intersection
-type UserWithRole = {
-    user: User,
-    role: Role
-}
-
+// type User = {
+//     name: string,
+//     age: number,
+//     skills: string[]
+// }
+//
+// type Role = {
+//     id: number
+// }
+//
+// // Intersection
+// type UserWithRole = {
+//     user: User,
+//     role: Role
+// }
+//
 // let user: UserWithRole = {
 //     id: 12,
 //     name: 'asdf',
 //     age: 33,
 //     skills: ['1', '2']
 // };
+
+// ====================
+// Interfaces
+
+interface User {
+    name: string,
+    age: number,
+    skills: string[],
+    log: (id: number) => string
+}
+
+interface Role {
+    roleId: number,
+}
+
+interface UserWithRole extends User, Role {
+    createdAt: Date,
+}
+
+let user: UserWithRole = {
+    name: 'asdf',
+    age: 33,
+    skills: ['1', '2'],
+    roleId: 1,
+    createdAt: new Date(),
+    log(id) {
+        return ''
+    }
+};
+
+interface UserDic1 {
+    [index: number]: User
+}
+
+type UserDic2 = {
+    [index: number]: User
+}
 
